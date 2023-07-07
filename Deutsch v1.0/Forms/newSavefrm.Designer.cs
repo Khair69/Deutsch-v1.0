@@ -30,12 +30,12 @@
         {
             this.saveTxtbox = new System.Windows.Forms.TextBox();
             this.langCmb = new System.Windows.Forms.ComboBox();
-            this.selectFileLbl = new System.Windows.Forms.Label();
             this.saveBtn = new System.Windows.Forms.Button();
             this.fromLbl = new System.Windows.Forms.Label();
             this.toLbl = new System.Windows.Forms.Label();
             this.fromTxtbox = new System.Windows.Forms.TextBox();
             this.toTxtbox = new System.Windows.Forms.TextBox();
+            this.pathTxtBox = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // saveTxtbox
@@ -56,15 +56,6 @@
             this.langCmb.Size = new System.Drawing.Size(410, 23);
             this.langCmb.TabIndex = 1;
             // 
-            // selectFileLbl
-            // 
-            this.selectFileLbl.AutoSize = true;
-            this.selectFileLbl.Location = new System.Drawing.Point(170, 156);
-            this.selectFileLbl.Name = "selectFileLbl";
-            this.selectFileLbl.Size = new System.Drawing.Size(89, 15);
-            this.selectFileLbl.TabIndex = 3;
-            this.selectFileLbl.Text = "Select Text File..";
-            // 
             // saveBtn
             // 
             this.saveBtn.Location = new System.Drawing.Point(611, 387);
@@ -73,6 +64,7 @@
             this.saveBtn.TabIndex = 4;
             this.saveBtn.Text = "Save";
             this.saveBtn.UseVisualStyleBackColor = true;
+            this.saveBtn.Click += new System.EventHandler(this.saveBtn_Click);
             // 
             // fromLbl
             // 
@@ -106,7 +98,15 @@
             this.toTxtbox.Size = new System.Drawing.Size(97, 23);
             this.toTxtbox.TabIndex = 0;
             // 
-            // newSave
+            // pathTxtBox
+            // 
+            this.pathTxtBox.Location = new System.Drawing.Point(170, 155);
+            this.pathTxtBox.Name = "pathTxtBox";
+            this.pathTxtBox.Size = new System.Drawing.Size(410, 23);
+            this.pathTxtBox.TabIndex = 0;
+            this.pathTxtBox.Text = "file name";
+            // 
+            // newSavefrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -114,12 +114,12 @@
             this.Controls.Add(this.saveBtn);
             this.Controls.Add(this.toLbl);
             this.Controls.Add(this.fromLbl);
-            this.Controls.Add(this.selectFileLbl);
             this.Controls.Add(this.langCmb);
             this.Controls.Add(this.toTxtbox);
             this.Controls.Add(this.fromTxtbox);
+            this.Controls.Add(this.pathTxtBox);
             this.Controls.Add(this.saveTxtbox);
-            this.Name = "newSave";
+            this.Name = "newSavefrm";
             this.Text = "newSave";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -130,11 +130,11 @@
 
         private TextBox saveTxtbox;
         private ComboBox langCmb;
-        private Label selectFileLbl;
         private Button saveBtn;
         private Label fromLbl;
         private Label toLbl;
         private TextBox fromTxtbox;
         private TextBox toTxtbox;
+        private TextBox pathTxtBox;
     }
 }

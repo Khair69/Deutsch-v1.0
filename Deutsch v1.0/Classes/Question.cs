@@ -1,7 +1,9 @@
 ﻿using deutsch_code;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -19,20 +21,21 @@ namespace Deutsch_v1._0
             String line;
             try
             {
-                line = File.ReadLines(@"..\..\..\..\words\words.txt").Skip(idx - 1).Take(1).First();
+                line = File.ReadLines(wPath).Skip(idx - 1).Take(1).First();
                 string[] wline = line.Split();
                 dWord = wline[1];
                 eWord = wline[2];
             }
             catch (Exception e)
             {
-                Console.WriteLine("Exception: " + e.Message);
+                Debug.WriteLine("Exception: " + e.Message);
             }
         }
 
         public string getDWord() { return dWord; }
         public string getEWord() { return eWord; }
-        public void setIdx(int idx) { this.idx = idx;}
+        public void setIdx(int idx) { this.idx = idx; }
+        public void setwPath(string filename) { wPath = @"..\..\..\words\" + filename + ".txt"; }
 
         public bool dtoe(string ans)
         {

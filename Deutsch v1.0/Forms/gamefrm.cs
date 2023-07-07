@@ -1,4 +1,5 @@
 ﻿using deutsch_code;
+using Deutsch_v1._0.Classes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,13 +16,20 @@ namespace Deutsch_v1._0.Forms
 {
     public partial class gamefrm : Form
     {
-        static int[] rngs = rng.rngBetween(1, 10);
         static int probIdx = 0;
+        static saves s = new saves(2);
+        static int[] rngs = rng.rngBetween(s.getFrom(), s.getTo());
+        static int range = s.getTo() - s.getFrom()+1;
         static Question q = new Question();
-
         public gamefrm()
         {
             InitializeComponent();
+            gameProg.Maximum = range;
+            q.setwPath(s.getPath());
+            newQ();
+            dWordLbl.Text = q.getDWord();
+            this.ActiveControl = ansTxtbox;
+            ansTxtbox.Focus();
         }
         public static void newQ()
         {
@@ -31,10 +39,7 @@ namespace Deutsch_v1._0.Forms
 
         private void game_Load(object sender, EventArgs e)
         {
-            newQ();
-            dWordLbl.Text = q.getDWord();
-            this.ActiveControl = ansTxtbox;
-            ansTxtbox.Focus();
+
         }
 
         private void checkBtn_Click(object sender, EventArgs e)
@@ -45,7 +50,7 @@ namespace Deutsch_v1._0.Forms
                 resLbl.Text = "You're Goddamn Right!";
                 cnBtn.Visible = true;
                 checkBtn.Visible = false;
-                gameProg.Value += 10;
+                gameProg.Value = probIdx+1;
             }
             else
             {
@@ -53,7 +58,7 @@ namespace Deutsch_v1._0.Forms
                 resLbl.Text = "Wrong the right answer is " + q.getEWord();
                 cnBtn.Visible = true;
                 checkBtn.Visible = false;
-                gameProg.Value += 10;
+                gameProg.Value = probIdx + 1;
             }
             
             

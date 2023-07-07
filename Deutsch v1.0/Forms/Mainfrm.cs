@@ -1,4 +1,5 @@
 using deutsch_code;
+using Deutsch_v1._0.Classes;
 using Deutsch_v1._0.Forms;
 using System.Diagnostics;
 
@@ -13,8 +14,11 @@ namespace Deutsch_v1._0
 
         private void newBtn_Click(object sender, EventArgs e)
         {
-            gamefrm gfrm = new gamefrm();
-            gfrm.Show();
+            //gamefrm gfrm = new gamefrm();
+            //gfrm.Show();
+            //this.Hide();
+            newSavefrm sfrm = new newSavefrm();
+            sfrm.Show();
             this.Hide();
         }
     }
