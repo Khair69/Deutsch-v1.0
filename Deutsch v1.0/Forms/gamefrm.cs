@@ -17,7 +17,7 @@ namespace Deutsch_v1._0.Forms
     public partial class gamefrm : Form
     {
         static int probIdx = 0;
-        static saves s = new saves(2);
+        static saves s = new saves();
         static int[] rngs = rng.rngBetween(s.getFrom(), s.getTo());
         static int range = s.getTo() - s.getFrom()+1;
         static Question q = new Question();

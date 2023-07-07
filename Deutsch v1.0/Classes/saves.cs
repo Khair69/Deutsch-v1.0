@@ -19,7 +19,7 @@ namespace Deutsch_v1._0.Classes
         private int from;
         private int to;
 
-        public saves(int id)
+        public void loadSave(int id)
         {
             String line;
             try
@@ -69,6 +69,65 @@ namespace Deutsch_v1._0.Classes
             }
 
         }
+
+        public int numOfSaves()
+        {
+            string line;
+            int num = 0;
+            try
+            {
+                StreamReader sr = new StreamReader(@"..\..\..\Save files\saves.txt");
+                line = sr.ReadLine();
+                while (line != null)
+                {
+                    line = sr.ReadLine();
+                    num++;
+                }
+                sr.Close();
+            }
+            catch (Exception e)
+            {
+                Debug.WriteLine("Exception: " + e.Message);
+            }
+            return num;
+        }
+
+        //public string[] savesList()
+        //{
+        //    string line;
+        //    try
+        //    {
+        //        StreamReader sr = new StreamReader(@"..\..\..\Save files\saves.txt");
+        //        id = 1;
+        //        line = sr.ReadLine();
+        //        while (line != null)
+        //        {
+        //            line = sr.ReadLine();
+        //            id++;
+        //        }
+        //        sr.Close();
+        //        StreamReader srr = new StreamReader(@"..\..\..\Save files\saves.txt");
+        //        string[] list = new string[id - 1];
+        //        int i = 0;
+        //        line = srr.ReadLine();
+        //        list[i] = line.Split()[1];
+        //        while (line != null)
+        //        {
+        //            i++;
+        //            line = srr.ReadLine();
+        //            list[i] = line.Split()[1];
+        //        }
+
+        //        srr.Close();
+        //        return list;
+        //    }
+        //    catch (Exception e)
+        //    {
+        //        Debug.WriteLine("Exception: " + e.Message);
+        //        string[] error = { "error" };
+        //        return error;
+        //    }
+        //}
 
         public string getName() { return name; }
         public bool isDtoe() { return dtoe; }

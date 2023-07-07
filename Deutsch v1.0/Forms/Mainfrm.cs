@@ -17,8 +17,8 @@ namespace Deutsch_v1._0
             //gamefrm gfrm = new gamefrm();
             //gfrm.Show();
             //this.Hide();
-            newSavefrm sfrm = new newSavefrm();
-            sfrm.Show();
+            loadfrm lfrm = new loadfrm();
+            lfrm.Show();
             this.Hide();
         }
     }

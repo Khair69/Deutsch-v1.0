@@ -1,7 +1,9 @@
-﻿using System;
+﻿using Deutsch_v1._0.Classes;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -15,6 +17,15 @@ namespace Deutsch_v1._0.Forms
         public loadfrm()
         {
             InitializeComponent();
+            saves s = new saves();
+            int numOfS = s.numOfSaves();
+            string[] list = new string[numOfS];
+            for (int i = 0; i < numOfS; i++)
+            {
+                s.loadSave(i + 1);
+                list[i] = s.getName();
+            }
+            savesCmb.Items.AddRange(list);
         }
     }
 }
