@@ -19,6 +19,11 @@ namespace Deutsch_v1._0.Classes
         private int from;
         private int to;
 
+        public saves(int id)
+        {
+            loadSave(id);
+        }
+
         public void loadSave(int id)
         {
             String line;

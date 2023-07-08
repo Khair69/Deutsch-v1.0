@@ -16,13 +16,16 @@ namespace Deutsch_v1._0.Forms
 {
     public partial class gamefrm : Form
     {
+        static int gId;
         static int probIdx = 0;
-        static saves s = new saves();
+        static saves s = new saves(gId);
         static int[] rngs = rng.rngBetween(s.getFrom(), s.getTo());
-        static int range = s.getTo() - s.getFrom()+1;
+        static int range = s.getTo() - s.getFrom() + 1;
         static Question q = new Question();
-        public gamefrm()
+
+        public gamefrm(int gameId)
         {
+            gId = gameId;
             InitializeComponent();
             gameProg.Maximum = range;
             q.setwPath(s.getPath());
@@ -31,6 +34,8 @@ namespace Deutsch_v1._0.Forms
             this.ActiveControl = ansTxtbox;
             ansTxtbox.Focus();
         }
+
+
         public static void newQ()
         {
             q.setIdx(rngs[probIdx]);

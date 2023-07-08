@@ -49,6 +49,7 @@
             this.startBtn.TabIndex = 1;
             this.startBtn.Text = "START";
             this.startBtn.UseVisualStyleBackColor = true;
+            this.startBtn.Click += new System.EventHandler(this.startBtn_Click);
             // 
             // editBtn
             // 

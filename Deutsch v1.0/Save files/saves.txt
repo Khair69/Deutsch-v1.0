@@ -1,3 +1,4 @@
 1	top10	dtoe	words	1	10
 2	top20	dtoe	words	5	10
 3	daisy	dtoe	words	5	15
+4	khaled	dtoe	words	40	50

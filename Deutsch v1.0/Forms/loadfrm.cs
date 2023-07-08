@@ -17,7 +17,7 @@ namespace Deutsch_v1._0.Forms
         public loadfrm()
         {
             InitializeComponent();
-            saves s = new saves();
+            saves s = new saves(-1);
             int numOfS = s.numOfSaves();
             string[] list = new string[numOfS];
             for (int i = 0; i < numOfS; i++)
@@ -26,6 +26,15 @@ namespace Deutsch_v1._0.Forms
                 list[i] = s.getName();
             }
             savesCmb.Items.AddRange(list);
+        }
+
+        private void startBtn_Click(object sender, EventArgs e)
+        {
+            int selectedId = savesCmb.SelectedIndex+1;
+            Debug.WriteLine(selectedId);
+            gamefrm gfrm = new gamefrm(2);
+            gfrm.Show();
+            this.Hide();
         }
     }
 }

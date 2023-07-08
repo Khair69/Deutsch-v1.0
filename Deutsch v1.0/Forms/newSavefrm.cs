@@ -13,7 +13,7 @@ namespace Deutsch_v1._0.Forms
 {
     public partial class newSavefrm : Form
     {
-        static saves s = new saves();
+        static saves s = new saves(-1);
         public newSavefrm()
         {
             InitializeComponent();

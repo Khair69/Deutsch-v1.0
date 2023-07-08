@@ -11,7 +11,7 @@ namespace Deutsch_v1._0.Forms
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new Mainfrm());
+            Application.Run(new loadfrm());
         }
     }
 }
